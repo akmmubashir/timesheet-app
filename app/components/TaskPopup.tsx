@@ -90,17 +90,36 @@ const TaskPopup = (props: Props) => {
                 <label className="text-[14px] font-[500] text-[#111928]">
                   Hours *
                 </label>
-                <input
-                  type="number"
-                  value={newTask.hours}
-                  onChange={(e) =>
-                    setNewTask({
-                      ...newTask,
-                      hours: parseFloat(e.target.value),
-                    })
-                  }
-                  className="border border-[#E5E7EB] rounded p-2"
-                />
+                <div className="flex items-center rounded-[8px] border border-[#E5E7EB] w-fit">
+                  <button
+                    className="border-r text-[18px] font-[500] border-[#E5E7EB] rounded p-2 w-[40px] bg-[#F3F4F6] cursor-pointer"
+                    onClick={() =>
+                      setNewTask({ ...newTask, hours: newTask.hours - 1 })
+                    }
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    disabled
+                    value={newTask.hours}
+                    onChange={(e) =>
+                      setNewTask({
+                        ...newTask,
+                        hours: parseFloat(e.target.value),
+                      })
+                    }
+                    className="border-l border-[#E5E7EB] rounded p-2 w-[50px]"
+                  />
+                  <button
+                    className="border-l text-[18px] font-[500] border-[#E5E7EB] rounded p-2 w-[40px] bg-[#F3F4F6] cursor-pointer"
+                    onClick={() =>
+                      setNewTask({ ...newTask, hours: newTask.hours + 1 })
+                    }
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </div>
 
