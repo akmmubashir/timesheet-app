@@ -94,7 +94,10 @@ const TaskPopup = (props: Props) => {
                   <button
                     className="border-r text-[18px] font-[500] border-[#E5E7EB] rounded p-2 w-[40px] bg-[#F3F4F6] cursor-pointer"
                     onClick={() =>
-                      setNewTask({ ...newTask, hours: newTask.hours - 1 })
+                      setNewTask({
+                        ...newTask,
+                        hours: Math.max(0, newTask.hours - 1),
+                      })
                     }
                   >
                     -
@@ -102,6 +105,8 @@ const TaskPopup = (props: Props) => {
                   <input
                     type="number"
                     disabled
+                    min={0}
+                    max={24}
                     value={newTask.hours}
                     onChange={(e) =>
                       setNewTask({
@@ -114,7 +119,10 @@ const TaskPopup = (props: Props) => {
                   <button
                     className="border-l text-[18px] font-[500] border-[#E5E7EB] rounded p-2 w-[40px] bg-[#F3F4F6] cursor-pointer"
                     onClick={() =>
-                      setNewTask({ ...newTask, hours: newTask.hours + 1 })
+                      setNewTask({
+                        ...newTask,
+                        hours: Math.min(24, newTask.hours + 1),
+                      })
                     }
                   >
                     +
