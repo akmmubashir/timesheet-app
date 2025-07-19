@@ -55,8 +55,8 @@ const handler = NextAuth({
     updateAge: 24 * 60 * 60,
   },
   pages: {
-    signIn: '/login',
-    error: '/auth/error',
+    signIn: "/login",
+    error: "/auth/error",
   },
   callbacks: {
     async jwt({ token, user }) {
