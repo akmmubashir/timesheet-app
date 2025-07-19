@@ -29,17 +29,23 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (
-          credentials?.email === "test@gmail.com" &&
-          credentials?.password === "password123"
-        ) {
-          return {
-            id: "1",
-            email: credentials.email || "",
-            name: "John Doe",
-          };
+        try {
+          // In production, you should replace this with a proper authentication check
+          if (
+            credentials?.email === "test@gmail.com" &&
+            credentials?.password === "password123"
+          ) {
+            return {
+              id: "1",
+              email: credentials.email || "",
+              name: "John Doe",
+            };
+          }
+          return null;
+        } catch (error) {
+          console.error("Authentication error:", error);
+          return null;
         }
-        return null;
       },
     }),
   ],
