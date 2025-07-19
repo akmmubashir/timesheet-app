@@ -6,9 +6,15 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/auth/:path*',
-        destination: 'http://localhost:3000/api/auth/:path*',
+        destination: '/api/auth/:path*',
       },
     ];
+  },
+  // Configure API routes
+  api: {
+    bodyParser: {
+      sizeLimit: "1mb",
+    },
   },
 };
 
