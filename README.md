@@ -91,7 +91,7 @@ app/
 
 ## Usage
 
-1. Log in to your account
+1. Log in to your account using your email and password (default email: test@gmail.com, password: password123)
 2. View your weekly timesheet
 3. Add new tasks by clicking the "+" button
 4. Edit or delete existing tasks

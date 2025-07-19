@@ -20,7 +20,7 @@ const Header = () => {
 
   useEffect(() => {
     // Initialize the store on client side
-    const store = useModalStore.getState();
+    // const store = useModalStore.getState();
     return () => {
       setShowModal(false);
     };

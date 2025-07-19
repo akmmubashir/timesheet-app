@@ -6,13 +6,14 @@ import { notFound } from "next/navigation";
 import TableSheet from "@/app/components/TableSheet";
 
 interface Props {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function Page({ params }: Props) {
-  const weekId = Number(params.id);
+export default async function Page({ params }: Props) {
+  const resolvedParams = await params;
+  const weekId = Number(resolvedParams.id);
 
   // If invalid id
   if (isNaN(weekId)) {

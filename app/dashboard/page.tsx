@@ -4,9 +4,7 @@ import Header from "../components/Header";
 import RightsReserved from "../components/RightsReserved";
 import { status, weeklyTasks } from "../utils/data";
 
-type Props = {};
-
-const page = (props: Props) => {
+const page = () => {
   return (
     <div className="bg-[#F8F8F8] min-h-screen w-full">
       <Header />

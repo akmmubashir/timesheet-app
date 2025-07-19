@@ -52,7 +52,7 @@ const TableSheet = (props: Props) => {
               </React.Fragment>
             ))}
             <button
-              onClick={(e) => {
+              onClick={() => {
                 setShowModal(true);
                 setNewTask({
                   id: "",

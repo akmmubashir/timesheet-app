@@ -2,9 +2,7 @@
 import React from "react";
 import { useModalStore } from "../store/store";
 
-type Props = {};
-
-const TaskPopup = (props: Props) => {
+const TaskPopup = () => {
   const { showModal, setShowModal, newTask, setNewTask } = useModalStore();
   console.log(newTask);
   return (
@@ -17,7 +15,7 @@ const TaskPopup = (props: Props) => {
                 Add New Entry
               </h2>
               <button
-                onClick={(e) => {
+                onClick={() => {
                   setShowModal(false);
                   document.body.style.overflow = "auto";
                 }}
