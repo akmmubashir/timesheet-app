@@ -10,8 +10,8 @@ const TaskPopup = (props: Props) => {
   return (
     <React.Fragment>
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#00000032]">
-          <div className="bg-white rounded-lg min-w-[560px] max-md:w-full shadow-lg space-y-4 relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#00000032] max-md:p-[20px_20px]">
+          <div className="bg-white rounded-lg md:min-w-[560px] max-md:w-full shadow-lg space-y-4 relative">
             <div className="p-[20px] border-b border-[#E5E7EB] flex justify-between items-center">
               <h2 className="text-[18px] font-[600] text-[#111928]">
                 Add New Entry

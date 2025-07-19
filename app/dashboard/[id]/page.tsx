@@ -30,15 +30,15 @@ export default function Page({ params }: Props) {
   return (
     <div className="bg-[#F8F8F8] min-h-screen w-full">
       <Header />
-      <div className="w-full h-full p-[40px_100px]">
+      <div className="w-full h-full p-[40px_100px] max-md:p-[30px_20px]">
         <div className="flex flex-col gap-[20px]">
           <div className="w-full h-full bg-white p-[20px] flex flex-col gap-[20px]">
-            <div className="flex items-center justify-between">
-              <p className="font-[700] text-[24px] text-[#111928]">
+            <div className="flex items-center max-md:items-start max-md:flex-col max-md:gap-[10px] justify-between">
+              <p className="font-[700] text-[24px] max-md:text-[20px] text-[#111928]">
                 This week’s timesheet
               </p>
-              <div className="ms-auto flex flex-col gap-[6px] group hover:cursor-pointer relative">
-                <div className="hidden group-hover:block absolute bg-white p-[4px_6px] rounded top-[-10px] left-[50%] translate-x-[-50%] shadow">
+              <div className="md:ms-auto flex flex-col gap-[6px] group hover:cursor-pointer relative">
+                <div className="md:hidden group-hover:block absolute md:bg-white md:p-[4px_6px] rounded top-[-10px] max-md:top-[0px] left-[50%] max-md:left-0 max-md:translate-x-0 translate-x-[-50%] md:shadow">
                   <p className="font-[500] text-[14px] text-[#111928]">
                     {currentWeek.hours}/40 hrs
                   </p>

@@ -1,15 +1,20 @@
-# Timesheet App
+# ticktock - Timesheet Management Application
 
-A modern timesheet tracking application built with Next.js and TypeScript.
+A modern, responsive timesheet management application built with Next.js and TypeScript, designed to help teams track and manage their work hours efficiently.
 
 ## Features
 
-- User authentication with NextAuth.js
-- Weekly timesheet tracking
-- Task management with project categorization
-- Responsive design
-- Modal-based task creation and editing
-- State management with Zustand
+- 📅 Weekly timesheet tracking with project categorization
+- 📝 Task management with detailed tracking
+  - Add, edit, and delete tasks
+  - Track hours worked
+  - Categorize tasks by project
+  - Detailed task descriptions
+- 📱 Fully responsive design for desktop and mobile
+- 🔐 User authentication with NextAuth.js
+- 📊 Visual task status indicators
+- 🔄 Real-time state management with Zustand
+- 🎨 Modern UI with Tailwind CSS
 
 ## Tech Stack
 
@@ -24,7 +29,7 @@ A modern timesheet tracking application built with Next.js and TypeScript.
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - npm or yarn
 
 ### Installation
@@ -32,7 +37,7 @@ A modern timesheet tracking application built with Next.js and TypeScript.
 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd timesheet-app
+cd ticktock
 ```
 
 2. Install dependencies
@@ -63,8 +68,15 @@ yarn dev
 app/
 ├── api/              # API routes
 ├── components/       # Reusable React components
+│   ├── Login.tsx     # Login component
+│   ├── Header.tsx    # Navigation header
+│   ├── TableSheet.tsx # Task table component
+│   ├── TaskPopup.tsx # Task creation/editing modal
+│   └── TaskTile.tsx  # Individual task display
 ├── dashboard/        # Dashboard pages
+│   └── [id]/         # Weekly timesheet view
 ├── store/           # Zustand store
+│   └── store.ts    # Global state management
 ├── types/           # TypeScript types
 ├── utils/           # Utility functions
 └── layout.tsx       # Root layout
@@ -77,9 +89,14 @@ app/
 - `npm run start` - Starts the production server
 - `npm run format:write` - Formats the code using Prettier
 
-## License
+## Usage
 
-MIT License - feel free to use this code as needed
+1. Log in to your account
+2. View your weekly timesheet
+3. Add new tasks by clicking the "+" button
+4. Edit or delete existing tasks
+5. Track your hours worked
+6. View task status indicators
 
 ## Contributing
 
@@ -88,3 +105,13 @@ MIT License - feel free to use this code as needed
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+Please make sure to update tests as appropriate and follow the existing code style.
+
+## License
+
+This project is licensed
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the maintainers.

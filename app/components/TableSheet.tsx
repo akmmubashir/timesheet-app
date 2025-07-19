@@ -25,8 +25,11 @@ const TableSheet = (props: Props) => {
   return (
     <React.Fragment>
       {props.currentWeek.days.map((day) => (
-        <div key={day.id} className="grid grid-cols-12 gap-[20px]">
-          <div className="col-span-2 text-[#6B7280] font-[400] text-[14px]">
+        <div
+          key={day.id}
+          className="grid grid-cols-12 gap-[20px] max-md:gap-[6px]"
+        >
+          <div className="col-span-2 max-md:col-span-full text-[#6B7280] font-[400] text-[14px]">
             <p className="text-[#111928] font-[600] text-[18px] leading-[150%]">
               {new Intl.DateTimeFormat("en-US", {
                 month: "short",
@@ -34,7 +37,7 @@ const TableSheet = (props: Props) => {
               }).format(new Date(day.date))}
             </p>
           </div>
-          <div className="col-span-10 flex flex-col gap-[10px]">
+          <div className="col-span-10 max-md:col-span-full flex flex-col gap-[10px]">
             {day.tasks.map((task) => (
               <React.Fragment key={task.id}>
                 <TaskTile

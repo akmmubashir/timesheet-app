@@ -20,17 +20,17 @@ const TaskTile = (props: Props) => {
     <React.Fragment>
       <div
         key={task.id}
-        className="flex items-center justify-between p-[12px] border border-[#E5E7EB] rounded-lg"
+        className="flex max-md:flex-col md:items-center justify-between p-[12px] border border-[#E5E7EB] rounded-lg"
       >
         <p className="text-[#111928] font-[500] text-[16px]">{task.name}</p>
-        <div className="flex items-center gap-[10px]">
+        <div className="flex max-md:flex-col md:items-center gap-[10px]">
           <p className="text-[#9CA3AF] font-[400] text-[14px]">
             {task.hours} hrs
           </p>
-          <p className="capitalize bg-[#E1EFFE] p-[4px_8px] rounded-md text-[#1E429F] font-[500] text-[12px]">
+          <p className="capitalize bg-[#E1EFFE] p-[4px_8px] rounded-md text-[#1E429F] font-[500] text-[12px] max-md:w-fit">
             {task.project}
           </p>
-          <div className="relative group">
+          <div className="relative group max-md:hidden">
             <p className="cursor-pointer">
               <Image
                 src={"/more.svg"}
@@ -55,6 +55,21 @@ const TaskTile = (props: Props) => {
                 Delete
               </button>
             </div>
+          </div>
+          <div className="md:hidden flex gap-[6px]">
+            <button
+              onClick={() => {
+                setShowModal(true);
+                setNewTask(task);
+                document.body.style.overflow = "hidden";
+              }}
+              className="cursor-pointer text-[14px] font-[500] w-fit text-start bg-[#1E429F] text-white p-[6px_12px] hover:bg-blue-400 rounded"
+            >
+              Edit
+            </button>
+            <button className="cursor-pointer text-[14px] font-[500] w-fit text-start bg-[#E02424] text-white p-[6px_12px] hover:bg-red-400 rounded">
+              Delete
+            </button>
           </div>
         </div>
       </div>
